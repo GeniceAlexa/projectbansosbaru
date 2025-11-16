@@ -254,7 +254,7 @@
         <li><a href="#"><ion-icon name="document-text-outline" class="me-2"></ion-icon><span>Data Penerima</span></a></li>
         <li><a href="#"><ion-icon name="people-outline" class="me-2"></ion-icon><span>Dokumetasi</span></a></li>
       </div>
-      <li class="logout"><a href="#"><ion-icon name="log-out-outline" class="me-2"></ion-icon><span>Sign Out</span></a></li>
+      <li class="logout"><a href="<?= base_url() ?>"><ion-icon name="log-out-outline" class="me-2"></ion-icon><span>Sign Out</span></a></li>
     </ul>
   </div>
 
@@ -317,13 +317,12 @@
           ?>
             <tr> 
               <th scope="row"><?= $i++ ?></th>
-                  <td><?= $b['Nama'];?></td>
-                  <td><?= $b['NIK'];?></td>
-                  <td><?= $b['status'];?></td>
-                  <td><?= $b['tanggal'];?></td>
+                  <td><?= $b['nama'];?></td>
+                  <td><?= $b['nik'];?></td>
+                  <!-- ini disesuain sm tabel pengajuannya -->
 
                   <td class="aksi">
-                    <a href="/adminuser/ubah/<?= $b['id_user']; ?>"><button class="edit"><ion-icon name="create-outline"></ion-icon></button></a>
+                    <a href="/adminuser/edit/<?= $b['id_user']; ?>"><button class="edit"><ion-icon name="create-outline"></ion-icon></button></a>
                     <a href="/adminuser/hapus/<?= $b['id_user']; ?>" onclick="return confirm('Apakah anda yakin menghapus data ini?');"><button class="delete"><ion-icon name="trash-outline"></ion-icon></button></a>
             </tr>
             <?php endforeach; ?>    

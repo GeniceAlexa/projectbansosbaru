@@ -15,7 +15,7 @@ class bansos extends BaseController
 
     public function profil()
     {
-        return view('user/profil');
+        return view('user/profile');
     }
 
     public function ganti()

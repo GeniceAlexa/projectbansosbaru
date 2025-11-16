@@ -373,57 +373,73 @@
                 <h2 id="form-title">Daftar BansosKu</h2>
                 <p id="form-subtitle">Langkah 1 dari 3: Data Pribadi</p>
                 
-                <form id="register-form">
+                <form id="register-form" action="<?= base_url('/register/save') ?>" method="post">
                     <div class="form-step active" id="step-1">
                         <div class="form-grid">
                             <div class="input-group">
                                 <label for="nama">Nama Lengkap</label>
-                                <input type="text" id="nama" placeholder="Nama Lengkap">
+                                <input type="text" id="nama" name="nama" placeholder="Nama Lengkap">
                             </div>
                             <div class="input-group">
                                 <label for="nik">NIK</label>
-                                <input type="text" id="nik" placeholder="NIK">
+                                <input type="text" id="nik" name="nik" placeholder="NIK">
                             </div>
                             <div class="input-group">
                                 <label for="email">Email</label>
-                                <input type="email" id="email" placeholder="Email">
+                                <input type="email" id="email" name="email" placeholder="Email">
                             </div>
                             <div class="input-group">
                                 <label for="hp">Nomor HP</label>
-                                <input type="tel" id="hp" placeholder="Nomor HP">
+                                <input type="tel" id="no_hp" name="no_hp" placeholder="Nomor HP">
                             </div>
                         </div>
-                        <p class="login-link">Sudah punya akun? <a href="#">Masuk sekarang</a></p>
+                        <p class="login-link">Sudah punya akun? <a href="<?= base_url('login') ?>">Masuk sekarang</a></p>
                     </div>
 
                     <div class="form-step" id="step-2">
                         <div class="form-grid">
                             <div class="input-group">
                                 <label for="provinsi">Provinsi</label>
-                                <select id="provinsi"><option value="">Pilih provinsi</option></select>
+                                <select id="provinsi" name="provinsi">
+                                    <option value="">Pilih kota</option>
+                                    <option value="">Jawa Tengah</option>
+                                    <option value="">Jawa Barat</option>
+                                </select>
                             </div>
                             <div class="input-group">
                                 <label for="kota">Kota/Kabupaten</label>
-                                <select id="kota"><option value="">Pilih kota</option></select>
+                                <select id="kota" name="kota">
+                                    <option value="">Pilih kota/kabupaten</option>
+                                    <option value="">Cilacap</option>
+                                    <option value="">Bandung</option>
+                                </select>
                             </div>
                             <div class="input-group">
                                 <label for="kecamatan">Kecamatan</label>
-                                <select id="kecamatan"><option value="">Pilih kecamatan</option></select>
+                                <select id="kecamatan" name="kecamatan">
+                                    <option value="">Pilih kota</option>
+                                    <option value="">Cilacap Selatan</option>
+                                    <option value="">Coblong</option>
+                                </select>
                             </div>
                             <div class="input-group">
                                 <label for="kelurahan">Kelurahan</label>
-                                <select id="kelurahan"><option value="">Pilih kelurahan</option></select>
+                                <select id="kelurahan" name="kelurahan">
+                                    <option value="">Pilih kota</option>
+                                    <option value="">Sidanegara</option>
+                                    <option value="">Antapani</option>
+                                </select>
                             </div>
                             <div class="input-group full-width">
                                 <label for="alamat">Alamat Lengkap</label>
-                                <input type="text" id="alamat" placeholder="Jalan, RT/RW, No. rumah">
+                                <input type="text" id="alamat" name="alamat" placeholder="Jalan, RT/RW, No. rumah">
                             </div>
                             <div class="input-group full-width">
                                 <label for="kodepos">Kode Pos</label>
-                                <input type="text" id="kodepos" placeholder="12345">
+                                <input type="text" id="kode_pos" name="kode_pos" placeholder="12345">
                             </div>
                         </div>
-                        <p class="login-link">Sudah punya akun? <a href="#">Masuk sekarang</a></p>
+                        <p class="login-link">Sudah punya akun? <a href="<?= base_url('login') ?>">Masuk sekarang</a></p>
                     </div>
 
                     <div class="form-step" id="step-3">
@@ -431,14 +447,14 @@
                             <div class="input-group full-width">
                                 <label for="password">Kata Sandi</label>
                                 <div class="input-field">
-                                    <input type="password" id="password" placeholder="Minimal 8 karakter">
+                                    <input type="password" id="password" name="password" placeholder="Minimal 8 karakter">
                                     <i class="fas fa-eye-slash icon" id="toggle-password"></i>
                                 </div>
                             </div>
                             <div class="input-group full-width">
                                 <label for="confirm-password">Konfirmasi Kata Sandi</label>
                                 <div class="input-field">
-                                    <input type="password" id="confirm-password" placeholder="Ulangi kata sandi">
+                                    <input type="password" id="confirm-password" name="confirm-password"  placeholder="Ulangi kata sandi">
                                     <i class="fas fa-eye-slash icon" id="toggle-confirm-password"></i>
                                 </div>
                             </div>
@@ -446,7 +462,7 @@
                         <div class="terms">
                             Saya menyetujui <a href="#">Syarat & Ketentuan</a> dan <a href="#">KebijakanPrivasi Bansosku</a>, serta memberikan persetujuan untuk pengolahan data pribadi sesuai ketentuan yang berlaku.
                         </div>
-                        <p class="login-link">Sudah punya akun? <a href="#">Masuk sekarang</a></p>
+                        <p class="login-link">Sudah punya akun? <a href="<?= base_url('login') ?>">Masuk sekarang</a></p>
                     </div>
 
                     <div class="form-navigation">
@@ -529,7 +545,7 @@
                 } else {
                     // Logika untuk submit form di sini
                     alert('Pendaftaran Selesai!');
-                    // document.getElementById('register-form').submit();
+                    document.getElementById('register-form').submit();
                 }
             });
 

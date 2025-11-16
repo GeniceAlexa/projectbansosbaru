@@ -12,8 +12,15 @@ $routes->get('pages', 'pages::index');
 $routes->get('/dokum', 'pages::dokum');
 
 // Halaman login
-$routes->get('/login', 'adminuser::login');
-$routes->get('/register', 'adminuser::register');
+$routes->get('/login', 'logreg::login');
+$routes->post('/login/process', 'logreg::loginProcess');
+
+$routes->get('/register', 'logreg::register');
+$routes->post('/register/save', 'logreg::saveRegister');
+
+$routes->get('/admin/pengajuan', 'bansos::pengajuan');
+$routes->get('/user/profile', 'bansos::profil');
+
 
 //Adminuser
 
@@ -35,6 +42,7 @@ $routes->get('/pengajuan', 'adminuser::index');
 // $routes->get('/admin/hapus/(:num)', 'bansos::hapus/$1');
 
 // Halaman user
-// $routes->get('/profil', 'bansos::profil');
+$routes->get('/profile', 'bansos::profil');
 // $routes->get('/dokumentasi', 'bansos::dokum');
 $routes->get('/ganti', 'bansos::ganti');
+

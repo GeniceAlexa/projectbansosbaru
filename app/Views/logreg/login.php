@@ -279,12 +279,12 @@
             <p>Akses dashboard pribadi Anda untuk memantau status bantuan sosial</p>
         </div>
 
-        <form action="<?= base_url('adminuser') ?>?>">
+        <form action="<?= base_url('/login/process'); ?>" method="post">
             <div class="input-group">
                 <label for="email">Email atau NIK</label>
                 <div class="input-field">
                     <i class="fas fa-user icon"></i>
-                    <input type="text" id="email" placeholder="Masukkan email atau NIK Anda" required>
+                    <input type="text" id="email" name="email" placeholder="Masukkan email atau NIK Anda" required>
                 </div>
             </div>
 
@@ -292,7 +292,7 @@
                 <label for="password">Kata Sandi</label>
                 <div class="input-field">
                     <i class="fas fa-lock icon"></i>
-                    <input type="password" id="password" placeholder="Masukkan kata sandi" required>
+                    <input type="password" id="password" name="password" placeholder="Masukkan kata sandi" required>
                     <i class="fas fa-eye-slash eye-icon"></i>
                 </div>
             </div>
@@ -328,7 +328,7 @@
         </button>
 
         <p class="signup-link">
-            Belum punya akun? <a href="register">Daftar sekarang</a>
+            Belum punya akun? <a href="<?= base_url('register') ?>">Daftar sekarang</a>
         </p>
         <p class="help-text">
             Butuh bantuan? Hubungi customer service kami di 0800-1234-5678
