@@ -402,32 +402,32 @@
                                 <label for="provinsi">Provinsi</label>
                                 <select id="provinsi" name="provinsi">
                                     <option value="">Pilih kota</option>
-                                    <option value="">Jawa Tengah</option>
-                                    <option value="">Jawa Barat</option>
+                                    <option value="Jawa Tengah">Jawa Tengah</option>
+                                    <option value="Jawa Barat">Jawa Barat</option>
                                 </select>
                             </div>
                             <div class="input-group">
                                 <label for="kota">Kota/Kabupaten</label>
                                 <select id="kota" name="kota">
                                     <option value="">Pilih kota/kabupaten</option>
-                                    <option value="">Cilacap</option>
-                                    <option value="">Bandung</option>
+                                    <option value="Cilacap">Cilacap</option>
+                                    <option value="Bandung">Bandung</option>
                                 </select>
                             </div>
                             <div class="input-group">
                                 <label for="kecamatan">Kecamatan</label>
                                 <select id="kecamatan" name="kecamatan">
                                     <option value="">Pilih kota</option>
-                                    <option value="">Cilacap Selatan</option>
-                                    <option value="">Coblong</option>
+                                    <option value="Cilacap Selatan">Cilacap Selatan</option>
+                                    <option value="Coblong">Coblong</option>
                                 </select>
                             </div>
                             <div class="input-group">
                                 <label for="kelurahan">Kelurahan</label>
                                 <select id="kelurahan" name="kelurahan">
                                     <option value="">Pilih kota</option>
-                                    <option value="">Sidanegara</option>
-                                    <option value="">Antapani</option>
+                                    <option value="Sidanegara">Sidanegara</option>
+                                    <option value="Antapani~">Antapani</option>
                                 </select>
                             </div>
                             <div class="input-group full-width">
