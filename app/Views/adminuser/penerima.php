@@ -292,12 +292,10 @@
       </div>
     </div>
 
-    <div class="switch-container mb-4">
-      <a href ="<?= base_url('/adminuser/pengajuan') ?>"
-      class="switch-btn active" style="border-radius:25px 0 0 25px; backround-color:#14532d;color:white;">Pengajuan</a>
-      <a href ="<?= base_url('/adminuser/penerima') ?>"
-      class="switch-btn" style="border-radius:0 25px 25px 0;">Penerima</a>
-    </div>
+        <div class="switch-container mb-4">
+            <a href="<?= base_url('/adminuser/pengajuan') ?>" class="switch-btn" style="border-radius:25px 0 0 25px;<?= (current_url() == base_url('/adminuser/pengajuan')) ? 'background-color:#14532d;color:white;' : '' ?>">Pengajuan</a>
+            <a href="<?= base_url('/adminuser/penerima') ?>" class="switch-btn active" style="border-radius:0 25px 25px 0;background-color:#14532d;color:white;">Penerima</a>
+        </div>
 
     <div class="table-responsive">
       <table class="table align-middle">
@@ -333,7 +331,7 @@
 
                     <?php else : ?>
 
-                      <a href="<?= base_url('/adminuser/edit/'. $b['id_user']) ?>" class="btn btn-sm btn-primary me-1">Edit</a>
+                      <a href="<?= base_url('/adminuser/edit_penerima/'. $b['id_user']) ?>" class="btn btn-sm btn-primary me-1">Edit</a>
 
                       <a href="<?= base_url('/adminuser/hapus/'.$b['id_user']) ?>" class="btn btn-sm btn-outline-secondary" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">Hapus</a>
                     <?php endif; ?>

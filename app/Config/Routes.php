@@ -25,13 +25,20 @@ $routes->get('/user/profile', 'bansos::profil');
 //Adminuser
 
 $routes->get('/adminuser', 'adminuser::index');
-// $routes->get('/adminuser/edit', 'adminuser::edit');
+$routes->get('/adminuser/pengajuan', 'adminuser::index');
+$routes->get('/adminuser/penerima', 'adminuser::penerima');
+
+// Edit penerima view
+$routes->get('/adminuser/edit_penerima/(:num)', 'adminuser::edit_penerima/$1');
+
+// Approve / reject pengajuan
+$routes->get('/adminuser/setujui/(:num)', 'adminuser::setujui/$1');
+$routes->get('/adminuser/tolak/(:num)', 'adminuser::tolak/$1');
+
 $routes->get('/adminuser/edit/(:num)', 'adminuser::edit/$1');
 $routes->post('/adminuser/update/(:num)', 'adminuser::update/$1');
 $routes->get('/adminuser/hapus/(:num)', 'adminuser::hapus/$1');
 $routes->get('/adminuser/tdokum', 'adminuser::tdokum');
-
-$routes->get('/pengajuan', 'adminuser::index');
 
 // // Halaman admin
 // $routes->get('/admin', 'bansos::admin');

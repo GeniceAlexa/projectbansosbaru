@@ -27,7 +27,8 @@ class logreg extends BaseController
             'alamat'     => $this->request->getPost('alamat'),
             'kode_pos'   => $this->request->getPost('kode_pos'),
             'password'   => $this->request->getPost('password'),
-
+             'status'    => 'pending',
+            'tanggal'    => date('Y-m-d'),
             'role'       => 'user'
         ];
 

@@ -9,7 +9,7 @@ class adminuserModel extends Model
     protected $table = 'datauser';
     protected $primaryKey = 'id_user';
     protected $allowedFields = ['nama', 'nik', 'email', 'no_hp', 'provinsi', 'kota', 'kecamatan', 
-    'kelurahan', 'alamat', 'kode_pos', 'password'];
+    'kelurahan', 'alamat', 'kode_pos', 'password', 'status', 'tanggal', 'role'];
     
     public function getadminuser($id_user = false)
     {
