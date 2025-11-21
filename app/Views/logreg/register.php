@@ -389,7 +389,7 @@
                                 <input type="email" id="email" name="email" placeholder="Email">
                             </div>
                             <div class="input-group">
-                                <label for="hp">Nomor HP</label>
+                                <label for="hp">Nomor Hp</label>
                                 <input type="tel" id="no_hp" name="no_hp" placeholder="Nomor HP">
                             </div>
                         </div>
