@@ -26,7 +26,7 @@ class logreg extends BaseController
             'kelurahan'  => $this->request->getPost('kelurahan'),
             'alamat'     => $this->request->getPost('alamat'),
             'kode_pos'   => $this->request->getPost('kode_pos'),
-            'password'   => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
+            'password'   => $this->request->getPost('password'),
 
             'role'       => 'user'
         ];
@@ -41,23 +41,33 @@ class logreg extends BaseController
         return view('logreg/login');
     }
 
+    
     public function loginProcess()
-{
-    $userModel = new adminuserModel();
+    {
+        $userModel = new adminuserModel();
 
-    $email = $this->request->getPost('email');
-    $password = $this->request->getPost('password');
+        $email = $this->request->getPost('email');
+        $nik   = $this->request->getPost('nik');
+        $password = $this->request->getPost('password');
 
-    $user = $userModel->where('email', $email)->first();
+        // Cari user berdasarkan email ATAU NIK
+        $user = $userModel
+            ->where('email', $email)
+            ->orWhere('nik', $nik)
+            ->first();
 
-    if ($user && password_verify($password, $user['password'])) {
+        // Jika user tidak ditemukan atau password salah
+        if (!$user || $password !== $user['password']) {
+            return redirect()->back()->with('error', 'Email atau password salah!');
+        }
 
-        // Simpan session
+        // Login berhasil → set session
         session()->set([
             'logged_in' => true,
             'id_user'   => $user['id_user'],
             'nama'      => $user['nama'],
             'email'     => $user['email'],
+            'nik'       => $user['nik'],
             'role'      => $user['role']
         ]);
 
@@ -67,11 +77,7 @@ class logreg extends BaseController
         } else {
             return redirect()->to('/user/profile');
         }
-
-    } else {
-        return redirect()->back()->with('error', 'Email atau password salah!');
     }
-}
 
 
     public function logout()

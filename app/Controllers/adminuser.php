@@ -21,6 +21,11 @@ class adminuser extends BaseController
         return view('adminuser/pengajuan', $data);
     }
 
+    public function tdokum()
+    {
+        return view('adminuser/tdokum');
+    }
+
     public function hapus($id_user){
         $this->adminuserModel->delete($id_user);
 

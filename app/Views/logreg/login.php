@@ -279,7 +279,19 @@
             <p>Akses dashboard pribadi Anda untuk memantau status bantuan sosial</p>
         </div>
 
-        <form action="<?= base_url('/login/process'); ?>" method="post">
+        <?php if (session()->getFlashdata('error')) : ?>
+        <div class="alert alert-danger">
+            <?= session()->getFlashdata('error'); ?>
+        </div>
+        <?php endif; ?>
+
+        <?php if (session()->getFlashdata('success')) : ?>
+        <div class="alert alert-success">
+            <?= session()->getFlashdata('success'); ?>
+        </div>
+        <?php endif; ?>
+
+        <form action="<?= base_url('/process'); ?>" method="post">
             <div class="input-group">
                 <label for="email">Email atau NIK</label>
                 <div class="input-field">

@@ -13,12 +13,12 @@ $routes->get('/dokum', 'pages::dokum');
 
 // Halaman login
 $routes->get('/login', 'logreg::login');
-$routes->post('/login/process', 'logreg::loginProcess');
+$routes->post('/process', 'logreg::loginProcess');
 
 $routes->get('/register', 'logreg::register');
 $routes->post('/register/save', 'logreg::saveRegister');
 
-$routes->get('/admin/pengajuan', 'bansos::pengajuan');
+$routes->get('/adminuser/pengajuan', 'adminuser::index');
 $routes->get('/user/profile', 'bansos::profil');
 
 
@@ -29,6 +29,7 @@ $routes->get('/adminuser', 'adminuser::index');
 $routes->get('/adminuser/edit/(:num)', 'adminuser::edit/$1');
 $routes->post('/adminuser/update/(:num)', 'adminuser::update/$1');
 $routes->get('/adminuser/hapus/(:num)', 'adminuser::hapus/$1');
+$routes->get('/adminuser/tdokum', 'adminuser::tdokum');
 
 $routes->get('/pengajuan', 'adminuser::index');
 
