@@ -272,7 +272,7 @@
           <div class="position-relative">
             <label class="form-label">Nama Lengkap</label>
             <ion-icon name="person-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="Enzy Madona" readonly>
+            <input type="text" class="form-control form-control-custom" value="" required>
           </div>
         </div>
 
@@ -280,7 +280,7 @@
           <div class="position-relative">
             <label class="form-label">NIK</label>
             <ion-icon name="card-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="3301408798640678" readonly>
+            <input type="text" class="form-control form-control-custom" value="" required>
           </div>
         </div>
 
@@ -288,7 +288,7 @@
           <div class="position-relative">
             <label class="form-label">No. Telp</label>
             <ion-icon name="call-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="088224523986487" readonly>
+            <input type="text" class="form-control form-control-custom" value="" required>
           </div>
         </div>
 
@@ -296,7 +296,7 @@
           <div class="position-relative">
             <label class="form-label">Email</label>
             <ion-icon name="mail-outline" class="input-icon"></ion-icon>
-            <input type="email" class="form-control form-control-custom" value="enzy@gmail.com" readonly>
+            <input type="email" class="form-control form-control-custom" value="" required>
           </div>
         </div>
 
@@ -304,7 +304,7 @@
           <div class="position-relative">
             <label class="form-label">Alamat</label>
             <ion-icon name="location-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="Jawa Tengah, Jalan Merpati, Sarang, Cibadak" readonly>
+            <input type="text" class="form-control form-control-custom" value="" required>
           </div>
         </div>
       </div>

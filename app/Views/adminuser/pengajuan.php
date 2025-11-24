@@ -293,8 +293,7 @@
     </div>
 
     <div class="switch-container mb-4">
-      <a href ="<?= base_url('/adminuser/pengajuan') ?>"
-      class="switch-btn active" style="border-radius:25px 0 0 25px; backround-color:#14532d;color:white;">Pengajuan</a>
+      <a href ="<?= base_url('/adminuser/pengajuan') ?>" class="switch-btn active" style="border-radius:25px 0 0 25px; backround-color:#14532d;color:white;">Pengajuan</a>
       <a href ="<?= base_url('/adminuser/penerima') ?>"
       class="switch-btn" style="border-radius:0 25px 25px 0;">Penerima</a>
     </div>
