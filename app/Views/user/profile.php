@@ -324,27 +324,26 @@
 
                 <div class="data-field">
                     <h3>Nama Lengkap</h3>
-                    <p>Enzy Madona</p>
+                    <p><?= $user['nama'] ?? '-' ?></p>
                 </div>
-
                 <div class="data-field">
                     <h3>NIK</h3>
-                    <p>3301456789645678</p>
+                     <p><?= $user['nik'] ?? '-' ?></p>
                 </div>
 
                 <div class="data-field">
                     <h3>Email</h3>
-                    <p>✉️ enzy@gmail.com</p>
+                    <p><?= $user['email'] ?? '-' ?></p>
                 </div>
 
                 <div class="data-field">
                     <h3>No. Telp</h3>
-                    <p>📞 086234567899987</p>
+                    <p><?= $user['no_hp'] ?? '-' ?></p>
                 </div>
 
                 <div class="data-field">
                     <h3>Alamat</h3>
-                    <p>📍 Jalan Merpati, Slarang, Cilacap</p>
+                       <p><?= $user['alamat'] ?? '-' ?></p>
                 </div>
             </div>
         </div>
@@ -383,12 +382,17 @@
         </div>
 
         <div class="buttons">
-            <button>Kembali ke Dokumen</button>
+            <a href="<?= site_url('upload') ?>">
             <button>
-                <img src="edit" alt="edit">
+                Cek Dokumen
+            </button>
+            <a href="<?= site_url('ganti') ?>">
+            <button>
                 Edit Profile
             </button>
-            <button>Lihat Status Bantuan</button>
+            <a href="<?= site_url('status') ?>">
+                <button>Lihat Status Bantuan</button>
+            </a>
         </div>
     </div>
 </body>

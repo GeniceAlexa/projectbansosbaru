@@ -135,7 +135,7 @@
         <!-- Judul Gambar -->
         <div class="mb-4">
           <h5 class="fw-bold mb-3">Judul Gambar</h5>
-          <p class="text-dark">pembagian bansos</p>
+          <input type="text" class="form-control form-control-custom" value="" required>
           <hr class="my-4">
         </div>
 
@@ -154,15 +154,15 @@
 
         <!-- Wilayah -->
         <div class="mb-4">
-          <h5 class="fw-bold mb-3"><Wbr></Wbr>ilayah</h5>
-          <p class="text-dark">Kesugihan</p>
+          <h5 class="fw-bold mb-3"><br></br>Wilayah</h5>
+          <input type="text" class="form-control form-control-custom" value="" required>
           <hr class="my-4">
         </div>
 
         <!-- Deskripsi -->
         <div class="mb-5">
           <h5 class="fw-bold mb-3">Deskripsi</h5>
-          <p class="text-dark">Pembagian bansos tanggal_</p>
+          <input type="text" class="form-control form-control-custom" value="" required>
           <hr class="my-4">
         </div>
 

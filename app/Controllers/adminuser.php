@@ -130,6 +130,8 @@ public function tolak($id_user)
         return view('adminuser/edit_penerima', $data);
     }
 
+    
+
 }
 
  

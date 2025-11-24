@@ -400,32 +400,98 @@
                         <div class="form-grid">
                             <div class="input-group">
                                 <label for="provinsi">Provinsi</label>
-                                <select id="provinsi" name="provinsi">
-                                    <option value="">Pilih kota</option>
-                                    <option value="Jawa Tengah">Jawa Tengah</option>
-                                    <option value="Jawa Barat">Jawa Barat</option>
-                                </select>
+                                <select name="provinsi"  id="provinsi">
+                                 
+                                 
+                                    <?php foreach ($provinsi as $p): ?>
+                                        <option value="<?= $p['id']; ?>">
+                                            <?= $p['nama_provinsi']; ?>
+                                        </option>
+                                        <?php endforeach ?>
+                                    </select>
+                                    
+                                  
                             </div>
                             <div class="input-group">
                                 <label for="kota">Kota/Kabupaten</label>
-                                <select id="kota" name="kota">
+                                <select id="kota" name="kota" class="form-control">
                                     <option value="">Pilih kota/kabupaten</option>
-                                    <option value="Cilacap">Cilacap</option>
-                                    <option value="Bandung">Bandung</option>
                                 </select>
                             </div>
+
+                           <script>
+                                // Tunggu sampai dokumen siap
+                                document.addEventListener('DOMContentLoaded', function() {
+                                    
+                                    // Ambil elemen dropdown
+                                    const provinsiSelect = document.getElementById('provinsi');
+                                    const kabSelect = document.getElementById('kota');
+
+                                    // Cek dulu apakah elemennya ada biar gak error null
+                                    if (provinsiSelect && kabSelect) {
+
+                                        // Saat Provinsi diubah
+                                        provinsiSelect.addEventListener('change', function () {
+                                            
+                                            let provinsiID = this.value;
+
+                                            // Reset dropdown kabupaten
+                                            kabSelect.innerHTML = '<option value="">Loading...</option>';
+                                            kabSelect.disabled = true; // Matikan sebentar pas loading
+
+                                            // Cek kalau user memilih "Pilih Provinsi" (kosong)
+                                            if (provinsiID === "") {
+                                                kabSelect.innerHTML = '<option value="">Pilih kota/kabupaten</option>';
+                                                return; // Stop di sini, gak usah fetch
+                                            }
+
+                                            // Lakukan fetch ke server untuk dapatkan kabupaten
+                                            let url = "<?= base_url('wilayah/kabupaten') ?>/" + provinsiID;
+
+                                            fetch(url)
+                                                .then(response => {
+                                                    if (!response.ok) {
+                                                        throw new Error('Gagal mengambil data');
+                                                    }
+                                                    return response.json();
+                                                })
+                                                .then(data => {
+                                                    // Kosongkan dan isi opsi default
+                                                    kabSelect.innerHTML = '<option value="">Pilih Kabupaten</option>';
+                                                    kabSelect.disabled = false;
+
+                                                    data.forEach(item => {
+                                                        let opt = document.createElement('option');
+                                                        opt.value = item.id;
+                                                        opt.textContent = item.nama;
+                                                        kabSelect.appendChild(opt);
+                                                    });
+                                                })
+                                                .catch(error => {
+                                                    console.error('Error:', error);
+                                                    kabSelect.innerHTML = '<option value="">Gagal memuat data</option>';
+                                                });
+                                        });
+
+                                    }
+                                });
+                            </script>
+
+
                             <div class="input-group">
                                 <label for="kecamatan">Kecamatan</label>
                                 <select id="kecamatan" name="kecamatan">
-                                    <option value="">Pilih kota</option>
+                                    <option value="">Pilih Desa</option>
                                     <option value="Cilacap Selatan">Cilacap Selatan</option>
                                     <option value="Coblong">Coblong</option>
                                 </select>
                             </div>
+
+                            
                             <div class="input-group">
                                 <label for="kelurahan">Kelurahan</label>
                                 <select id="kelurahan" name="kelurahan">
-                                    <option value="">Pilih kota</option>
+                                    <option value="">Pilih dusun</option>
                                     <option value="Sidanegara">Sidanegara</option>
                                     <option value="Antapani~">Antapani</option>
                                 </select>

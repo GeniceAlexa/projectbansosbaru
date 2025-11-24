@@ -18,6 +18,23 @@ class bansos extends BaseController
         return view('user/profile');
     }
 
+      public function index($id = null)
+    {
+        return view('status_page');
+    }
+    
+        public function status()
+        {
+            return view('user/status');
+        }
+
+    public function upload()
+    {
+        return view('user/upload');
+
+    }
+
+
     public function ganti()
     {
         return view('user/ganti');
