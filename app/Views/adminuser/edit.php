@@ -43,7 +43,7 @@
     </div>
 
     <div class="d-flex gap-2">
-      <button type="submit" class="btn btn-success">Simpan Perubahan</button>
+      <button type="submit" class="btn btn-success">Simpan perubahan</button>
       <a href="<?= base_url('/adminuser') ?>" class="btn btn-secondary">Kembali</a>
     </div>
   </form>

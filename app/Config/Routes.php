@@ -54,3 +54,37 @@ $routes->get('/profile', 'bansos::profil');
 // $routes->get('/dokumentasi', 'bansos::dokum');
 $routes->get('/ganti', 'bansos::ganti');
 
+
+// //admindokum
+// $routes->get('/admindokum', 'admindokum::index');
+// $routes->get('/admindokum/hapus/(:num)', 'admindokum::hapus/$1');
+
+// // Halaman tambah dokumentasi (form)
+// $routes->get('/admindokum/tambah', 'admindokum::tambah');
+// // Proses simpan dokumentasi (form POST)
+// $routes->post('/admindokum/simpan', 'admindokum::simpan');
+
+// // Jika ingin akses via /admindokum/berita, arahkan ke index yang menampilkan daftar
+// $routes->get('/admindokum/berita', 'admindokum::index');
+
+// // tambahan route untuk kompatibilitas link lama
+// $routes->get('/admindokum/tambah_data', 'admindokum::tambah');
+// $routes->get('/menu/tambah', 'admindokum::tambah');
+// $routes->post('/menu/simpan', 'admindokum::simpan');
+
+// admindokum
+$routes->get('/admindokum', 'admindokum::index');
+$routes->get('/admindokum/tambah', 'admindokum::tambah');
+$routes->post('/admindokum/simpan', 'admindokum::simpan');
+$routes->get('/admindokum/hapus/(:num)', 'admindokum::hapus/$1');
+
+// menu
+$routes->get('/menu', 'menu::index');
+$routes->get('/menu/tambah', 'menu::tambah');
+$routes->post('/menu/simpan', 'menu::simpan');
+$routes->get('/menu/hapus/(:num)', 'menu::hapus/$1');
+$routes->get('/menu/detail/(:num)', 'menu::detail/$1');
+$routes->get('/menu/ubah/(:num)', 'menu::ubah/$1');
+$routes->post('/menu/update/(:num)', 'menu::update/$1');
+
+

@@ -63,6 +63,13 @@
       margin-bottom: 30px;
     }
 
+    /* Box wrapper to limit width and center the card on large screens */
+    .box-wrapper {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 15px;
+    }
+
     .card-custom h2 {
       font-size: 24px;
       font-weight: 600;
@@ -263,101 +270,62 @@
     </header>
   </div>
 
-    <!-- Data User Card -->
-    <div class="card-custom">
-      <h2>Data User</h2>
-      
-      <div class="row g-4">
-        <div class="col-12">
-          <div class="position-relative">
+    <form action="<?= base_url('/adminuser/update/'.$adminuser['id_user']) ?>" method="post">
+      <?= csrf_field() ?>
+      <input type="hidden" name="return" value="penerima">
+      <div class="box-wrapper">
+        <div class="card-custom">
+        <h2>Data Penerima</h2>
+        <div class="row g-4">
+          <div class="col-12">
             <label class="form-label">Nama Lengkap</label>
-            <ion-icon name="person-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="Enzy Madona" readonly>
+            <input type="text" name="nama" class="form-control form-control-custom" value="<?= esc($adminuser['nama'] ?? $adminuser['Nama'] ?? '') ?>">
           </div>
-        </div>
 
-        <div class="col-12">
-          <div class="position-relative">
+          <div class="col-12">
             <label class="form-label">NIK</label>
-            <ion-icon name="card-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="3301408798640678" readonly>
+            <input type="text" name="nik" class="form-control form-control-custom" value="<?= esc($adminuser['nik'] ?? $adminuser['NIK'] ?? '') ?>">
           </div>
-        </div>
 
-        <div class="col-12">
-          <div class="position-relative">
-            <label class="form-label">No. Telp</label>
-            <ion-icon name="call-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="088224523986487" readonly>
-          </div>
-        </div>
-
-        <div class="col-12">
-          <div class="position-relative">
+          <div class="col-12">
             <label class="form-label">Email</label>
-            <ion-icon name="mail-outline" class="input-icon"></ion-icon>
-            <input type="email" class="form-control form-control-custom" value="enzy@gmail.com" readonly>
+            <input type="email" name="email" class="form-control form-control-custom" value="<?= esc($adminuser['email'] ?? '') ?>">
           </div>
-        </div>
 
-        <div class="col-12">
-          <div class="position-relative">
+          <div class="col-12">
+            <label class="form-label">No. Telp</label>
+            <input type="text" name="no_hp" class="form-control form-control-custom" value="<?= esc($adminuser['no_hp'] ?? '') ?>">
+          </div>
+
+          <div class="col-12">
             <label class="form-label">Alamat</label>
-            <ion-icon name="location-outline" class="input-icon"></ion-icon>
-            <input type="text" class="form-control form-control-custom" value="Jawa Tengah, Jalan Merpati, Sarang, Cibadak" readonly>
+            <input type="text" name="alamat" class="form-control form-control-custom" value="<?= esc($adminuser['alamat'] ?? '') ?>">
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Tanggal</label>
+            <input type="date" name="tanggal" class="form-control form-control-custom" value="<?= esc($adminuser['tanggal'] ?? '') ?>">
+          </div>
+
+          <div class="col-12">
+            <label class="form-label">Status</label>
+            <select name="status" class="form-select">
+              <?php $cur = $adminuser['status'] ?? '' ?>
+              <option value="pending" <?= $cur=='pending' ? 'selected' : '' ?>>Pending</option>
+              <option value="disetujui" <?= $cur=='disetujui' ? 'selected' : '' ?>>Disetujui</option>
+              <option value="ditolak" <?= $cur=='ditolak' ? 'selected' : '' ?>>Ditolak</option>
+            </select>
           </div>
         </div>
-      </div>
 
-      <div class="mt-4">
-        <button class="btn-simpan">Simpan</button>
-      </div>
-    </div>
+        <div class="mt-4 d-flex justify-content-between">
+          <a href="<?= base_url('/adminuser/penerima') ?>" class="btn btn-outline-secondary">Kembali</a>
+          <button type="submit" class="btn-simpan">Simpan Perubahan</button>
+        </div>
 
-    <!-- Status Penerima Card -->
-    <div class="card-custom">
-      <h2>Status Penerima</h2>
-
-      <!-- Status Steps -->
-      <div class="status-steps">
-        <div class="step-item">
-          <div class="step-circle active">1</div>
-          <div class="step-label">Pendaftaran</div>
-        </div>
-        <div class="step-item">
-          <div class="step-circle">2</div>
-          <div class="step-label">Verifikasi</div>
-        </div>
-        <div class="step-item">
-          <div class="step-circle">3</div>
-          <div class="step-label">Survei</div>
-        </div>
-        <div class="step-item">
-          <div class="step-circle">4</div>
-          <div class="step-label">Validasi Data</div>
-        </div>
-        <div class="step-item">
-          <div class="step-circle">5</div>
-          <div class="step-label">Persetujuan</div>
-        </div>
-        <div class="step-item">
-          <div class="step-circle">6</div>
-          <div class="step-label">Pencairan</div>
         </div>
       </div>
-
-      <!-- Status Text -->
-      <div class="status-text">
-        Status Saat Ini : <strong>Menunggu Verifikasi</strong>
-      </div>
-
-      <!-- Action Buttons -->
-      <div class="d-flex justify-content-center gap-3 mt-4">
-        <button class="btn btn-setuju">Setuju</button>
-        <button class="btn btn-tolak">Tolak</button>
-      </div>
-    </div>
-  </div>
+    </form>
 
   <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

@@ -116,7 +116,7 @@ public function tolak($id_user)
         'status' => 'ditolak'
     ]);
 
-    session()->setFlashdata('pesan', 'Pengajuan berhasil ditolak');
+    session()->setFlashdata('Pesan', 'Pengajuan berhasil ditolak');
     return redirect()->to('/adminuser/penerima');}
 
      public function edit_penerima($id_user)

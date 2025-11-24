@@ -265,80 +265,52 @@
       <h2 class="fw-semibold">Dashboard</h2>
     </div>
 
-    <div class="row g-3 mb-4">
-      <div class="col-md-3 col-sm-6">
-        <div class="card-custom p-3 text-center">
-          <h3 class="fs-6 text-dark">Total Penerima</h3>
-          <p class="fs-4 fw-bold text-success">2,409</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card-custom p-3 text-center">
-          <h3 class="fs-6 text-dark">Status Pending</h3>
-          <p class="fs-4 fw-bold text-success">182</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card-custom p-3 text-center">
-          <h3 class="fs-6 text-dark">Ditolak</h3>
-          <p class="fs-4 fw-bold text-success">56</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6">
-        <div class="card-custom p-3 text-center">
-          <h3 class="fs-6 text-dark">Total Permohonan</h3>
-          <p class="fs-4 fw-bold text-success">2,647</p>
-        </div>
-      </div>
+    <div class="switch-container mb-4">
+      <a href ="<?= base_url('/admindokum/dokum') ?>"
+      class="switch-btn active" style="border-radius:25px 0 0 25px; backround-color:#14532d;color:white;">Dokumentasi</a>
+      <a href ="<?= base_url('/admindokum/berita') ?>"
+      class="switch-btn" style="border-radius:0 25px 25px 0;">Berita</a>
     </div>
-
-        <div class="switch-container mb-4">
-            <a href="<?= base_url('/adminuser/pengajuan') ?>" class="switch-btn" style="border-radius:25px 0 0 25px;<?= (current_url() == base_url('/adminuser/pengajuan')) ? 'background-color:#14532d;color:white;' : '' ?>">Pengajuan</a>
-            <a href="<?= base_url('/adminuser/penerima') ?>" class="switch-btn active" style="border-radius:0 25px 25px 0;background-color:#14532d;color:white;">Penerima</a>
-        </div>
 
     <div class="table-responsive">
       <table class="table align-middle">
         <thead>
           <tr>
             <th>ID</th>
-            <th>Nama Permohonan</th>
-            <th>NIK</th>
-            <th>Status</th>
-            <th>Tanggal</th>
+            <th>Judul</th>
+            <th>Gambar</th>
+            <th>Wilayah</th>
+            <th>Deskripsi</th>
             <th>Aksi</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-               <?php
-            $i = 1;
-            foreach($adminuser as $b) :  
-          ?>
-            <tr> 
-              <th scope="row"><?= $i++ ?></th>
-                  <td><?= $b['nama'];?></td>
-                  <td><?= $b['nik'];?></td>
-                  <td><?= $b['status'] ?? 'pending' ?></td>
-                  <td><?= $b['tanggal'] ?? '-' ?></td>
+             <tbody>
+    <?php
+    $i = 1;
+    foreach($admindokum as $b) :
+    ?>
+    <tr>
+        <th scope="row"><?= $i++ ?></th>
+        <td><?= $b['judul']; ?></td>
+        <td><?= $b['gambar']; ?></td>
+        <td><?= $b['wilayah'] ?? '-' ?></td>
+        <td><?= $b['deskripsi']; ?></td>
+        <td>
+            <a href="<?= base_url('/admindokum/hapus/'.$b['id_dokumentasi']) ?>" 
+               class="btn btn-sm btn-danger"
+               onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">
+                Hapus
+            </a>
+        </td>
+    </tr>
 
-                  <td class="aksi">
-                   <?php $status = $b['status'] ?? '' ?>
-                    <?php if ($status === 'ditolak') : ?>
-                      <span class="badge bg-danger me-2">ditolak</span>
 
-                      <a href="<?= base_url('/adminuser/hapus/'. $b['id_user']) ?>" class= "btn btn-sm btn-outline-secondary" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">Hapus</a>
-
-                    <?php else : ?>
-                      <a href="<?= base_url('/adminuser/edit_penerima/'. $b['id_user']) ?>" class="btn btn-sm btn-primary me-1">Edit</a>
-
-                      <a href="<?= base_url('/adminuser/hapus/'.$b['id_user']) ?>" class="btn btn-sm btn-outline-secondary" onclick="return confirm('Apakah anda yakin ingin menghapus data ini?');">Hapus</a>
-                    <?php endif; ?>
-                  </td>
-            </tr>
             <?php endforeach; ?>    
         </tbody>
       </table>
+      <a href="<?= base_url('/admindokum/tambah_data') ?>" class="btn btn-primary">Tambah Data menu</a>
     </div>
   </div>
 
