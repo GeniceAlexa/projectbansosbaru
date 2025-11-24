@@ -8,7 +8,13 @@ class logreg extends BaseController
 {
     public function register()
     {
-        return view('logreg/register');
+        $provModel = new \App\Models\ProvinsiModel();
+        $provinsi = $provModel->findAll();
+        $data['provinsi'] = $provinsi;
+
+        return view('logreg/register', $data);
+
+
     }
 
     public function saveRegister()
@@ -76,7 +82,7 @@ class logreg extends BaseController
         if ($user['role'] === 'admin') {
             return redirect()->to('/adminuser/pengajuan');
         } else {
-            return redirect()->to('/user/profile');
+            return redirect()->to('/user/upload');
         }
     }
 
@@ -86,4 +92,12 @@ class logreg extends BaseController
         session()->destroy();
         return redirect()->to('/login');
     }
+
+    public function provinsi()
+    {
+        $provinsiModel = new \App\Models\ProvinsiModel();
+        $data['provinsi_list'] = $provinsiModel->orderby('nama_provinsi', 'ASC')->findAll();
+        return view('logreg/register', $data);
+    }
 }
+

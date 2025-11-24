@@ -20,6 +20,8 @@ $routes->post('/register/save', 'logreg::saveRegister');
 
 $routes->get('/adminuser/pengajuan', 'adminuser::index');
 $routes->get('/user/profile', 'bansos::profil');
+$routes->get('/user/upload', 'bansos::upload');
+$routes->get('/user/ganti', 'bansos::ganti');
 
 
 //Adminuser
@@ -40,6 +42,7 @@ $routes->post('/adminuser/update/(:num)', 'adminuser::update/$1');
 $routes->get('/adminuser/hapus/(:num)', 'adminuser::hapus/$1');
 $routes->get('/adminuser/tdokum', 'adminuser::tdokum');
 
+
 // // Halaman admin
 // $routes->get('/admin', 'bansos::admin');
 // $routes->get('/pengajuan', 'bansos::pengajuan');
@@ -51,6 +54,14 @@ $routes->get('/adminuser/tdokum', 'adminuser::tdokum');
 
 // Halaman user
 $routes->get('/profile', 'bansos::profil');
-// $routes->get('/dokumentasi', 'bansos::dokum');
 $routes->get('/ganti', 'bansos::ganti');
+$routes->get('/upload', 'bansos::upload');
+$routes->get('/status', 'bansos::status');
+
+$routes->get('/status_page', 'bansos::index');
+
+$routes->get('wilayah/kabupaten/(:num)', 'Wilayah::kabupaten/$1');
+
+
+
 
