@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 DEBUG - 2025-11-23 01:37:16 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 ERROR - 2025-11-23 01:37:33 --> mysqli_sql_exception: Table 'bansos.datauser' doesn't exist in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
 Stack trace:
@@ -115,6 +116,28 @@ Stack trace:
 #13 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
 #14 {main}
 CRITICAL - 2025-11-23 01:56:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+=======
+DEBUG - 2025-11-23 14:34:06 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-23 14:34:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-23 14:34:18 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\PWEB2\cibansos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\PWEB2\cibansos\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\PWEB2\cibansos\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\PWEB2\cibansos\app\Controllers\adminuser.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(933): App\Controllers\adminuser->index()
+#8 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+#9 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\PWEB2\cibansos\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\PWEB2\cibansos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\PWEB2\cibansos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\PWEB2\cibansos\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-11-23 14:34:18 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 [Method: GET, Route: adminuser/pengajuan]
 in SYSTEMPATH\Database\BaseConnection.php on line 684.
  1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
@@ -129,8 +152,13 @@ WHERE `status` != :status:', [...], false)
  8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 01:56:43 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+=======
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:34:18 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
  1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
 FROM `datauser`
@@ -150,8 +178,13 @@ WHERE `status` != :status:', [...], false)
 10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 01:56:43 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+=======
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:34:18 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
  1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
 FROM `datauser`
@@ -174,6 +207,7 @@ WHERE `status` != :status:', [...], false)
 11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 ERROR - 2025-11-23 02:00:49 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
 Stack trace:
@@ -194,6 +228,28 @@ Stack trace:
 #14 {main}
 CRITICAL - 2025-11-23 02:00:49 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
 [Method: GET, Route: adminuser]
+=======
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+ERROR - 2025-11-23 14:36:01 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\PWEB2\cibansos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\PWEB2\cibansos\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\PWEB2\cibansos\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\PWEB2\cibansos\app\Controllers\adminuser.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(933): App\Controllers\adminuser->index()
+#8 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+#9 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\PWEB2\cibansos\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\PWEB2\cibansos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\PWEB2\cibansos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\PWEB2\cibansos\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-11-23 14:36:01 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+[Method: GET, Route: adminuser/pengajuan]
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\BaseConnection.php on line 684.
  1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
 FROM `datauser`
@@ -207,8 +263,13 @@ WHERE `status` != :status:', [...], false)
  8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 02:00:49 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+=======
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:36:01 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
  1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
 FROM `datauser`
@@ -228,8 +289,13 @@ WHERE `status` != :status:', [...], false)
 10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 02:00:49 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+=======
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:36:01 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
  1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
 FROM `datauser`
@@ -252,6 +318,7 @@ WHERE `status` != :status:', [...], false)
 11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 ERROR - 2025-11-23 02:01:06 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
 Stack trace:
@@ -272,6 +339,106 @@ Stack trace:
 #14 {main}
 CRITICAL - 2025-11-23 02:01:06 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
 [Method: GET, Route: adminuser]
+=======
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+ERROR - 2025-11-23 14:38:35 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\PWEB2\cibansos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\PWEB2\cibansos\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\PWEB2\cibansos\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\PWEB2\cibansos\app\Controllers\adminuser.php(96): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(933): App\Controllers\adminuser->penerima()
+#8 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+#9 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\PWEB2\cibansos\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\PWEB2\cibansos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\PWEB2\cibansos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\PWEB2\cibansos\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-11-23 14:38:35 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+[Method: GET, Route: adminuser/penerima]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `datauser`
+WHERE `status` = :status:', [...], false)
+ 2 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 3 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 4 APPPATH\Controllers\adminuser.php(96): CodeIgniter\BaseModel->findAll()
+ 5 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\adminuser->penerima()
+ 6 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+ 7 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:38:35 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `datauser`
+WHERE `status` = \'disetujui\'')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `datauser`
+WHERE `status` = \'disetujui\'')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `datauser`
+WHERE `status` = :status:', [...], false)
+ 4 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 5 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 6 APPPATH\Controllers\adminuser.php(96): CodeIgniter\BaseModel->findAll()
+ 7 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\adminuser->penerima()
+ 8 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+ 9 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:38:35 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
+FROM `datauser`
+WHERE `status` = \'disetujui\'', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
+FROM `datauser`
+WHERE `status` = \'disetujui\'')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *
+FROM `datauser`
+WHERE `status` = \'disetujui\'')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `datauser`
+WHERE `status` = :status:', [...], false)
+ 5 SYSTEMPATH\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+ 6 SYSTEMPATH\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+ 7 APPPATH\Controllers\adminuser.php(96): CodeIgniter\BaseModel->findAll()
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\adminuser->penerima()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+ERROR - 2025-11-23 14:41:40 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\PWEB2\cibansos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\PWEB2\cibansos\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\PWEB2\cibansos\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\PWEB2\cibansos\app\Controllers\adminuser.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(933): App\Controllers\adminuser->index()
+#8 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+#9 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\PWEB2\cibansos\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\PWEB2\cibansos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\PWEB2\cibansos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\PWEB2\cibansos\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-11-23 14:41:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+[Method: GET, Route: adminuser/pengajuan]
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\BaseConnection.php on line 684.
  1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
 FROM `datauser`
@@ -285,8 +452,13 @@ WHERE `status` != :status:', [...], false)
  8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 02:01:06 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+=======
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:41:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
  1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
 FROM `datauser`
@@ -306,8 +478,13 @@ WHERE `status` != :status:', [...], false)
 10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 02:01:06 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+=======
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:41:40 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
  1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
 FROM `datauser`
@@ -330,6 +507,7 @@ WHERE `status` != :status:', [...], false)
 11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 ERROR - 2025-11-23 02:01:10 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
 Stack trace:
@@ -350,6 +528,28 @@ Stack trace:
 #14 {main}
 CRITICAL - 2025-11-23 02:01:10 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
 [Method: GET, Route: adminuser]
+=======
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+ERROR - 2025-11-23 14:41:44 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\PWEB2\cibansos\system\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *\nFROM `...', 0)
+#1 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *\nFROM `...')
+#2 C:\laragon\www\PWEB2\cibansos\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('SELECT *\nFROM `...')
+#3 C:\laragon\www\PWEB2\cibansos\system\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\laragon\www\PWEB2\cibansos\system\Model.php(286): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\laragon\www\PWEB2\cibansos\system\BaseModel.php(677): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\laragon\www\PWEB2\cibansos\app\Controllers\adminuser.php(19): CodeIgniter\BaseModel->findAll()
+#7 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(933): App\Controllers\adminuser->index()
+#8 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\adminuser))
+#9 C:\laragon\www\PWEB2\cibansos\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\laragon\www\PWEB2\cibansos\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#11 C:\laragon\www\PWEB2\cibansos\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\laragon\www\PWEB2\cibansos\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 C:\laragon\www\PWEB2\cibansos\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#14 {main}
+CRITICAL - 2025-11-23 14:41:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+[Method: GET, Route: adminuser/pengajuan]
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\BaseConnection.php on line 684.
  1 SYSTEMPATH\Database\BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query('SELECT *
 FROM `datauser`
@@ -363,8 +563,13 @@ WHERE `status` != :status:', [...], false)
  8 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
  9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 02:01:10 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+=======
+11 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:41:44 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
  1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('SELECT *
 FROM `datauser`
@@ -384,8 +589,13 @@ WHERE `status` != :status:', [...], false)
 10 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 11 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 12 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 CRITICAL - 2025-11-23 02:01:10 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+=======
+13 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+CRITICAL - 2025-11-23 14:41:44 --> [Caused by] mysqli_sql_exception: Unknown column 'status' in 'where clause'
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
 in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
  1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('SELECT *
 FROM `datauser`
@@ -408,6 +618,7 @@ WHERE `status` != :status:', [...], false)
 11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
 12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
 13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+<<<<<<< HEAD
 14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 ERROR - 2025-11-23 02:01:12 --> mysqli_sql_exception: Unknown column 'status' in 'where clause' in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
 Stack trace:
@@ -677,3 +888,6 @@ in APPPATH\Config\Routes.php on line 55.
  7 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
 DEBUG - 2025-11-23 19:35:47 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-11-23 19:35:54 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+=======
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\PWEB2\\cibansos\\public\\index.php')
+>>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5

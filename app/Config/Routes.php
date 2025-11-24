@@ -27,7 +27,7 @@ $routes->get('/user/ganti', 'bansos::ganti');
 //Adminuser
 
 $routes->get('/adminuser', 'adminuser::index');
-$routes->get('/adminuser/pengajuan', 'adminuser::index');
+// $routes->get('/adminuser/pengajuan', 'adminuser::index');
 $routes->get('/adminuser/penerima', 'adminuser::penerima');
 
 // Edit penerima view
