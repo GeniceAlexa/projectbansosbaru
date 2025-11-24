@@ -413,8 +413,8 @@
                                   
                             </div>
                             <div class="input-group">
-                                <label for="kabupaten">Kota/Kabupaten</label>
-                                <select id="kabupaten" name="kabupaten" class="form-control">
+                                <label for="kota">Kota/Kabupaten</label>
+                                <select id="kota" name="kota" class="form-control">
                                     <option value="">Pilih kota/kabupaten</option>
                                 </select>
                             </div>
@@ -425,7 +425,7 @@
                                     
                                     // Ambil elemen dropdown
                                     const provinsiSelect = document.getElementById('provinsi');
-                                    const kabSelect = document.getElementById('kabupaten');
+                                    const kabSelect = document.getElementById('kota');
 
                                     // Cek dulu apakah elemennya ada biar gak error null
                                     if (provinsiSelect && kabSelect) {

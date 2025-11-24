@@ -99,5 +99,17 @@ class logreg extends BaseController
         $data['provinsi_list'] = $provinsiModel->orderby('nama_provinsi', 'ASC')->findAll();
         return view('logreg/register', $data);
     }
+
+     public function getKabupaten()
+    {
+        $provinsi_id = $this->request->getPost('provinsi_id');
+        $kabupatenModel = new \App\Models\KabupatenModel(); // Pastikan Model ini ada (dari chat awal kamu)
+        
+        $kabupaten = $kabupatenModel->getByProvinsi($provinsi_id);
+        
+        // Kembalikan data dalam format JSON agar bisa dibaca JavaScript
+        return $this->response->setJSON($kabupaten);
+    }
+    
 }
 

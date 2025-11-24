@@ -167,3 +167,424 @@ DEBUG - 2025-11-24 03:11:42 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2025-11-24 03:11:52 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2025-11-24 03:12:01 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 >>>>>>> 2fb438f0643edae0c8048a9b06703215f99b17f5
+ERROR - 2025-11-24 04:47:03 --> mysqli_sql_exception: Column 'kota' cannot be null in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `da...', 0)
+#1 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `da...')
+#2 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `da...')
+#3 C:\laragon\www\projectbansosbaru2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `da...', Array, false)
+#4 C:\laragon\www\projectbansosbaru2\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\projectbansosbaru2\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\projectbansosbaru2\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\projectbansosbaru2\app\Controllers\logreg.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+#9 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+#10 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\projectbansosbaru2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\projectbansosbaru2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\projectbansosbaru2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-11-24 04:47:03 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 04:47:03 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'password\', \'pending\', \'2025-11-24\', \'user\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'password\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 04:47:03 --> [Caused by] mysqli_sql_exception: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'password\', \'pending\', \'2025-11-24\', \'user\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'password\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'password\', \'pending\', \'2025-11-24\', \'user\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+ERROR - 2025-11-24 04:49:05 --> mysqli_sql_exception: Column 'kota' cannot be null in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `da...', 0)
+#1 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `da...')
+#2 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `da...')
+#3 C:\laragon\www\projectbansosbaru2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `da...', Array, false)
+#4 C:\laragon\www\projectbansosbaru2\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\projectbansosbaru2\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\projectbansosbaru2\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\projectbansosbaru2\app\Controllers\logreg.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+#9 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+#10 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\projectbansosbaru2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\projectbansosbaru2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\projectbansosbaru2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-11-24 04:49:05 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 04:49:05 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'\', \'pending\', \'2025-11-24\', \'user\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 04:49:05 --> [Caused by] mysqli_sql_exception: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'\', \'pending\', \'2025-11-24\', \'user\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'Ahnaf\', \'1234567890\', \'ahnaf@example.com\', \'1234567\', \'13\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'\', \'pending\', \'2025-11-24\', \'user\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+DEBUG - 2025-11-24 04:49:22 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 04:49:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 04:49:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:20:53 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-24 05:22:00 --> mysqli_sql_exception: Column 'kota' cannot be null in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `da...', 0)
+#1 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `da...')
+#2 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `da...')
+#3 C:\laragon\www\projectbansosbaru2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `da...', Array, false)
+#4 C:\laragon\www\projectbansosbaru2\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\projectbansosbaru2\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\projectbansosbaru2\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\projectbansosbaru2\app\Controllers\logreg.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+#9 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+#10 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\projectbansosbaru2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\projectbansosbaru2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\projectbansosbaru2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-11-24 05:22:00 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:22:00 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'meki\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'20\', NULL, \'Cilacap Selatan\', \'Antapani~\', \'fgh\', \'345678\', \'12345678\', \'pending\', \'2025-11-24\', \'user\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'meki\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'20\', NULL, \'Cilacap Selatan\', \'Antapani~\', \'fgh\', \'345678\', \'12345678\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:22:00 --> [Caused by] mysqli_sql_exception: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'meki\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'20\', NULL, \'Cilacap Selatan\', \'Antapani~\', \'fgh\', \'345678\', \'12345678\', \'pending\', \'2025-11-24\', \'user\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'meki\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'20\', NULL, \'Cilacap Selatan\', \'Antapani~\', \'fgh\', \'345678\', \'12345678\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'meki\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'20\', NULL, \'Cilacap Selatan\', \'Antapani~\', \'fgh\', \'345678\', \'12345678\', \'pending\', \'2025-11-24\', \'user\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+DEBUG - 2025-11-24 05:22:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:22:27 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:23 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:30 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:42 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:46 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:23:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:25:39 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:25:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:26:04 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:26:19 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:26:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2025-11-24 05:28:56 --> mysqli_sql_exception: Column 'kota' cannot be null in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `da...', 0)
+#1 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `da...')
+#2 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `da...')
+#3 C:\laragon\www\projectbansosbaru2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `da...', Array, false)
+#4 C:\laragon\www\projectbansosbaru2\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\projectbansosbaru2\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\projectbansosbaru2\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\projectbansosbaru2\app\Controllers\logreg.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+#9 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+#10 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\projectbansosbaru2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\projectbansosbaru2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\projectbansosbaru2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-11-24 05:28:56 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:28:56 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'haanzie_\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'10\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'fgh\', \'345678\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'haanzie_\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'10\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'fgh\', \'345678\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:28:56 --> [Caused by] mysqli_sql_exception: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'haanzie_\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'10\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'fgh\', \'345678\', \'12345\', \'pending\', \'2025-11-24\', \'user\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'haanzie_\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'10\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'fgh\', \'345678\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'haanzie_\', \'4567890\', \'asyiq31@yahoo.com\', \'456789\', \'10\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'fgh\', \'345678\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+ERROR - 2025-11-24 05:29:57 --> mysqli_sql_exception: Column 'kota' cannot be null in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `da...', 0)
+#1 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `da...')
+#2 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `da...')
+#3 C:\laragon\www\projectbansosbaru2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `da...', Array, false)
+#4 C:\laragon\www\projectbansosbaru2\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\projectbansosbaru2\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\projectbansosbaru2\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\projectbansosbaru2\app\Controllers\logreg.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+#9 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+#10 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\projectbansosbaru2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\projectbansosbaru2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\projectbansosbaru2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-11-24 05:29:57 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:29:57 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:29:57 --> [Caused by] mysqli_sql_exception: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+ERROR - 2025-11-24 05:43:40 --> mysqli_sql_exception: Column 'kota' cannot be null in C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php:327
+Stack trace:
+#0 C:\laragon\www\projectbansosbaru2\system\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `da...', 0)
+#1 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `da...')
+#2 C:\laragon\www\projectbansosbaru2\system\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `da...')
+#3 C:\laragon\www\projectbansosbaru2\system\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `da...', Array, false)
+#4 C:\laragon\www\projectbansosbaru2\system\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+#5 C:\laragon\www\projectbansosbaru2\system\BaseModel.php(838): CodeIgniter\Model->doInsert(Array)
+#6 C:\laragon\www\projectbansosbaru2\system\Model.php(797): CodeIgniter\BaseModel->insert(Array, true)
+#7 C:\laragon\www\projectbansosbaru2\app\Controllers\logreg.php(41): CodeIgniter\Model->insert(Array)
+#8 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+#9 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+#10 C:\laragon\www\projectbansosbaru2\system\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#11 C:\laragon\www\projectbansosbaru2\system\Boot.php(363): CodeIgniter\CodeIgniter->run()
+#12 C:\laragon\www\projectbansosbaru2\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#13 C:\laragon\www\projectbansosbaru2\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#14 C:\laragon\www\projectbansosbaru2\system\rewrite.php(44): require_once('C:\\laragon\\www\\...')
+#15 {main}
+CRITICAL - 2025-11-24 05:43:40 --> CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+[Method: POST, Route: register/save]
+in SYSTEMPATH\Database\BaseConnection.php on line 684.
+ 1 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 2 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 3 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 4 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 5 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 6 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 7 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+ 8 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:43:40 --> [Caused by] CodeIgniter\Database\Exceptions\DatabaseException: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 332.
+ 1 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 2 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 4 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 5 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 6 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 7 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 8 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+ 9 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+10 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+11 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+12 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+13 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+14 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+CRITICAL - 2025-11-24 05:43:40 --> [Caused by] mysqli_sql_exception: Column 'kota' cannot be null
+in SYSTEMPATH\Database\MySQLi\Connection.php on line 327.
+ 1 SYSTEMPATH\Database\MySQLi\Connection.php(327): mysqli->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')', 0)
+ 2 SYSTEMPATH\Database\BaseConnection.php(729): CodeIgniter\Database\MySQLi\Connection->execute('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 3 SYSTEMPATH\Database\BaseConnection.php(646): CodeIgniter\Database\BaseConnection->simpleQuery('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (\'ilmiazam\', \'1234567\', \'asyiq31@yahoo.com\', \'1234567\', \'23\', NULL, \'Cilacap Selatan\', \'Sidanegara\', \'Muktisari Gandrungmangu Cilacap\', \'53254\', \'12345\', \'pending\', \'2025-11-24\', \'user\')')
+ 4 SYSTEMPATH\Database\BaseBuilder.php(2345): CodeIgniter\Database\BaseConnection->query('INSERT INTO `datauser` (`nama`, `nik`, `email`, `no_hp`, `provinsi`, `kota`, `kecamatan`, `kelurahan`, `alamat`, `kode_pos`, `password`, `status`, `tanggal`, `role`) VALUES (:nama:, :nik:, :email:, :no_hp:, :provinsi:, :kota:, :kecamatan:, :kelurahan:, :alamat:, :kode_pos:, :password:, :status:, :tanggal:, :role:)', [...], false)
+ 5 SYSTEMPATH\Model.php(394): CodeIgniter\Database\BaseBuilder->insert()
+ 6 SYSTEMPATH\BaseModel.php(838): CodeIgniter\Model->doInsert([...])
+ 7 SYSTEMPATH\Model.php(797): CodeIgniter\BaseModel->insert([...], true)
+ 8 APPPATH\Controllers\logreg.php(41): CodeIgniter\Model->insert([...])
+ 9 SYSTEMPATH\CodeIgniter.php(933): App\Controllers\logreg->saveRegister()
+10 SYSTEMPATH\CodeIgniter.php(507): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\logreg))
+11 SYSTEMPATH\CodeIgniter.php(354): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+12 SYSTEMPATH\Boot.php(363): CodeIgniter\CodeIgniter->run()
+13 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+14 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+15 SYSTEMPATH\rewrite.php(44): require_once('C:\\laragon\\www\\projectbansosbaru2\\public\\index.php')
+DEBUG - 2025-11-24 05:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2025-11-24 05:46:57 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
